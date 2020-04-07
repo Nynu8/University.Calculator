@@ -82,6 +82,27 @@ namespace Calculator
                     AddCharacter(op);
                 }
             }
+            else if(op == ".")
+            {
+                bool alreadyHasComma = false;
+                for(int i = expressionText.Text.Length - 1; i > 0; i--)
+                {
+                    if(expressionText.Text[i] == '.')
+                    {
+                        alreadyHasComma = true;
+                    }
+
+                    if (Calc.Operators.Contains(expressionText.Text[i]))
+                    {
+                        break;
+                    }
+                }
+
+                if (!alreadyHasComma)
+                {
+                    AddCharacter(op);
+                }
+            }
             else if (op == ")")
             {
                 if (expressionText.Text.Count(ch => ch == '(') > expressionText.Text.Count(ch => ch == ')'))

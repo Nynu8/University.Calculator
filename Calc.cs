@@ -35,7 +35,7 @@ namespace Calculator
             } 
             private set { } }
 
-        private readonly List<char> Operators = new List<char>()
+        public static readonly List<char> Operators = new List<char>()
         {
             '+', '-', '*', '/', '^', '(', ')'
         };
